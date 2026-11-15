@@ -2206,7 +2206,735 @@ renderPointsTable();
   </article>
 
 </section>
+<!-- ========== NCCI GRAND FINALE 2026 ========== -->
 
+<style>
+#ncci-final {
+    --gold: #e4bd68;
+    --gold2: #ffe4a1;
+    --bg: #0b0b0b;
+    --card: #171717;
+    --line: #39301f;
+    --muted: #aaa;
+    color: #f5f1e8;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 22px 0;
+}
+
+#ncci-final * {
+    box-sizing: border-box;
+}
+
+#ncci-final .final-btn {
+    width: 100%;
+    padding: 19px;
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    background: linear-gradient(120deg,#17120a,#493719,#17120a);
+    color: var(--gold2);
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #0008;
+}
+
+#ncci-final .final-btn:hover {
+    box-shadow: 0 0 20px #d8ad5544;
+}
+
+#ncci-final .arrow {
+    transition: .3s;
+    font-size: 23px;
+}
+
+#ncci-final .final-btn.active .arrow {
+    transform: rotate(180deg);
+}
+
+#ncci-final .final-content {
+    display: none;
+    margin-top: 14px;
+    background: var(--bg);
+    border: 1px solid #574522;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+#ncci-final .final-content.show {
+    display: block;
+    animation: finalOpen .3s ease;
+}
+
+@keyframes finalOpen {
+    from {opacity:0;transform:translateY(-8px);}
+    to {opacity:1;transform:translateY(0);}
+}
+
+#ncci-final .hero {
+    text-align: center;
+    padding: 30px 15px;
+    background: radial-gradient(ellipse at top,#59421d,#17130b 70%);
+    border-bottom: 1px solid var(--line);
+}
+
+#ncci-final .trophy {
+    font-size: 43px;
+}
+
+#ncci-final .hero h2 {
+    color: var(--gold2);
+    font-size: 29px;
+    letter-spacing: 3px;
+    margin: 10px 0;
+}
+
+#ncci-final .hero p {
+    color: #c6b58e;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+#ncci-final .champion {
+    display: inline-block;
+    margin-top: 12px;
+    background: linear-gradient(90deg,#a87925,#ffe3a0,#a87925);
+    color: #17110a;
+    padding: 9px 19px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+#ncci-final .result {
+    text-align: center;
+    padding: 23px 12px;
+    background: #151515;
+    border-bottom: 1px solid var(--line);
+}
+
+#ncci-final .result-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+#ncci-final .result h3 {
+    font-size: 23px;
+    margin: 12px 0 6px;
+}
+
+#ncci-final .result p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+#ncci-final .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 9px;
+    padding: 14px;
+}
+
+#ncci-final .info-box {
+    padding: 13px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+}
+
+#ncci-final .info-label {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#ncci-final .info-value {
+    margin-top: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+#ncci-final .section {
+    padding: 15px;
+}
+
+#ncci-final .section-title {
+    font-size: 17px;
+    color: var(--gold2);
+    font-weight: 900;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #51401f;
+    margin-bottom: 13px;
+}
+
+#ncci-final .innings-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 13px;
+    background: linear-gradient(120deg,#332713,#171717);
+    border: 1px solid #685027;
+    border-radius: 10px;
+}
+
+#ncci-final .team {
+    font-size: 21px;
+    font-weight: 900;
+}
+
+#ncci-final .score {
+    text-align: right;
+    color: var(--gold2);
+    font-size: 25px;
+    font-weight: 900;
+}
+
+#ncci-final .overs {
+    color: #bbb;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+#ncci-final .table-heading {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    margin: 17px 0 9px;
+}
+
+#ncci-final .table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #302a1e;
+    border-radius: 8px;
+}
+
+#ncci-final table {
+    width: 100%;
+    min-width: 490px;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+#ncci-final th {
+    background: #292113;
+    color: var(--gold2);
+    padding: 12px 9px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#ncci-final td {
+    padding: 12px 9px;
+    border-bottom: 1px solid #302d27;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#ncci-final td:first-child,
+#ncci-final th:first-child {
+    text-align: left;
+}
+
+#ncci-final .player {
+    font-weight: bold;
+}
+
+#ncci-final .total-row td {
+    background: #292113;
+    color: var(--gold2);
+    font-weight: 900;
+}
+
+#ncci-final .extras {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: #c5bba8;
+    font-size: 12px;
+    padding: 12px 2px;
+}
+
+#ncci-final .note {
+    padding: 13px;
+    margin-top: 12px;
+    border-left: 3px solid var(--gold);
+    background: #1b1914;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #d2c8b5;
+}
+
+#ncci-final .award {
+    margin: 15px;
+    padding: 22px 12px;
+    text-align: center;
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    background: linear-gradient(130deg,#38280f,#17130d);
+}
+
+#ncci-final .award-icon {
+    font-size: 34px;
+}
+
+#ncci-final .award-label {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+#ncci-final .award-name {
+    color: var(--gold2);
+    font-size: 29px;
+    font-weight: 900;
+    margin: 9px 0;
+}
+
+#ncci-final .award-stats {
+    color: #d4c9b6;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+#ncci-final .footer {
+    padding: 20px 10px;
+    text-align: center;
+    color: #a99b7c;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    border-top: 1px solid var(--line);
+    line-height: 2;
+}
+
+#ncci-final .swipe-hint {
+    color: #998c71;
+    font-size: 10px;
+    margin: 6px 0;
+}
+
+@media(max-width:480px) {
+    #ncci-final .hero h2 {
+        font-size: 23px;
+    }
+
+    #ncci-final .result h3 {
+        font-size: 19px;
+    }
+
+    #ncci-final .section {
+        padding: 11px;
+    }
+
+    #ncci-final .info-grid {
+        padding: 10px;
+    }
+}
+</style>
+
+
+<div id="ncci-final">
+
+    <button class="final-btn"
+        type="button"
+        aria-expanded="false"
+        onclick="ncciFinalToggle(this)">
+        <span>🏆 GRAND FINALE 2026</span>
+        <span class="arrow">⌄</span>
+    </button>
+
+    <div class="final-content">
+
+        <!-- HEADER -->
+
+        <div class="hero">
+            <div class="trophy">🏆</div>
+            <h2>GRAND FINALE</h2>
+            <p>NCCI CHAMPIONSHIP • 2026</p>
+            <div class="champion">🏆 NPP CHAMPIONS</div>
+        </div>
+
+        <!-- RESULT -->
+
+        <div class="result">
+            <div class="result-label">FINAL MATCH RESULT</div>
+            <h3>NPP WON BY 76 RUNS</h3>
+            <p>NPP 118/1 • NSC 42 ALL OUT</p>
+        </div>
+
+        <!-- MATCH DETAILS -->
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <div class="info-label">DATE</div>
+                <div class="info-value">15 November 2026</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">TOSS</div>
+                <div class="info-value">NPP won and elected to bat</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">VENUE</div>
+                <div class="info-value">NBG</div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">PLAYER OF THE MATCH</div>
+                <div class="info-value">Yash</div>
+            </div>
+
+        </div>
+
+        <!-- PLAYING XI -->
+
+        <div class="section">
+
+            <div class="section-title">👥 PLAYING XI</div>
+
+            <div class="info-box" style="margin-bottom:9px">
+                <div class="info-label">NPP</div>
+                <div class="info-value">
+                    Yash • Kishan (C) • Keshav • Yogesh
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-label">NSC</div>
+                <div class="info-value">
+                    Shaurya (C) • Piyush • Ashutosh • Lokesh
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FIRST INNINGS -->
+
+        <div class="section">
+
+            <div class="section-title">
+                1ST INNINGS • NPP BATTING
+            </div>
+
+            <div class="innings-heading">
+                <div class="team">NPP</div>
+                <div>
+                    <div class="score">118/1</div>
+                    <div class="overs">15 OVERS • RR 7.87</div>
+                </div>
+            </div>
+
+            <div class="table-heading">🏏 BATTING SCORECARD</div>
+            <div class="swipe-hint">← Swipe table to see all statistics →</div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Batter</th>
+                            <th>R</th>
+                            <th>B</th>
+                            <th>4s</th>
+                            <th>6s</th>
+                            <th>SR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="player">Yash*</td>
+                            <td>50</td>
+                            <td>47</td>
+                            <td>9</td>
+                            <td>2</td>
+                            <td>106.38</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Kishan*</td>
+                            <td>50</td>
+                            <td>29</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>172.41</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Yogesh</td>
+                            <td>0</td>
+                            <td>8</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Keshav*</td>
+                            <td>2</td>
+                            <td>6</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>33.33</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="extras">
+                <span><b>Total:</b> 118/1</span>
+                <span><b>Extras:</b> 16</span>
+                <span><b>Overs:</b> 15</span>
+                <span><b>Run Rate:</b> 7.87</span>
+            </div>
+
+            <div class="table-heading">🎯 NSC BOWLING</div>
+            <div class="swipe-hint">← Swipe table to see all statistics →</div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bowler</th>
+                            <th>O</th>
+                            <th>R</th>
+                            <th>W</th>
+                            <th>ECON</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="player">Shaurya</td>
+                            <td>1</td>
+                            <td>12</td>
+                            <td>0</td>
+                            <td>12.00</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Piyush</td>
+                            <td>7</td>
+                            <td>52</td>
+                            <td>1</td>
+                            <td>7.43</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Ashutosh</td>
+                            <td>7</td>
+                            <td>54</td>
+                            <td>0</td>
+                            <td>7.71</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note">
+                <b>Wicket:</b> Yogesh b Piyush.
+                <br>
+                Yash and Kishan both scored unbeaten half-centuries.
+            </div>
+
+        </div>
+
+        <!-- SECOND INNINGS -->
+
+        <div class="section">
+
+            <div class="section-title">
+                2ND INNINGS • NSC BATTING
+            </div>
+
+            <div class="innings-heading">
+                <div class="team">NSC</div>
+                <div>
+                    <div class="score">42 ALL OUT</div>
+                    <div class="overs">11.4 OVERS • RR 3.60</div>
+                </div>
+            </div>
+
+            <div class="table-heading">🏏 BATTING SCORECARD</div>
+            <div class="swipe-hint">← Swipe table to see all statistics →</div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Batter</th>
+                            <th>R</th>
+                            <th>B</th>
+                            <th>4s</th>
+                            <th>6s</th>
+                            <th>SR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="player">Shaurya (C)</td>
+                            <td>16</td>
+                            <td>30</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>53.33</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Piyush</td>
+                            <td>15</td>
+                            <td>30</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>50.00</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Ashutosh</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Lokesh</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>80.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="extras">
+                <span><b>Total:</b> 42 All Out</span>
+                <span><b>Extras:</b> 7</span>
+                <span><b>Overs:</b> 11.4</span>
+                <span><b>Run Rate:</b> 3.60</span>
+            </div>
+
+            <div class="table-heading">🎯 NPP BOWLING</div>
+            <div class="swipe-hint">← Swipe table to see all statistics →</div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bowler</th>
+                            <th>O</th>
+                            <th>R</th>
+                            <th>W</th>
+                            <th>ECON</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="player">Yash</td>
+                            <td>5</td>
+                            <td>16</td>
+                            <td>2</td>
+                            <td>3.20</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Kishan</td>
+                            <td>6</td>
+                            <td>22</td>
+                            <td>0</td>
+                            <td>3.67</td>
+                        </tr>
+                        <tr>
+                            <td class="player">Yogesh</td>
+                            <td>0.4</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>6.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note">
+                <b>DISMISSALS</b>
+                <br>
+                1. Shaurya — c Kishan b Yash
+                <br>
+                2. Piyush — b Kishan
+                <br>
+                3. Ashutosh — run out (Yash)
+                <br>
+                4. Lokesh — b Yogesh
+                <br><br>
+                Three wickets credited to bowlers; one dismissal was a run-out.
+            </div>
+
+        </div>
+
+        <!-- PLAYER OF THE MATCH -->
+
+        <div class="award">
+            <div class="award-icon">🏅</div>
+            <div class="award-label">PLAYER OF THE MATCH</div>
+            <div class="award-name">YASH</div>
+            <div class="award-stats">
+                50* Runs • 47 Balls
+                <br>
+                9 Fours • 2 Sixes
+                <br>
+                2 Wickets • 16 Runs
+                <br>
+                Also contributed to Ashutosh's run-out.
+            </div>
+        </div>
+
+        <!-- RECORD -->
+
+        <div class="section">
+
+            <div class="section-title">📜 NCCI HISTORY</div>
+
+            <div class="note">
+                NPP's 118/1 is the 4th-highest total in NCCI history,
+                according to the tournament record supplied.
+            </div>
+
+            <div class="note">
+                <b>🏆 NCCI CHAMPIONS 2026 — NPP</b>
+                <br>
+                A 76-run victory in the Grand Finale!
+            </div>
+
+        </div>
+
+        <div class="footer">
+            NCCI • GRAND FINALE 2026
+            <br>
+            THE CHAMPIONSHIP BELONGS TO NPP 🏆
+        </div>
+
+    </div>
+</div>
+
+<script>
+function ncciFinalToggle(button) {
+    const content = button.nextElementSibling;
+    const open = content.classList.toggle("show");
+
+    button.classList.toggle("active", open);
+    button.setAttribute("aria-expanded", open);
+}
+</script>
+
+<!-- ========== END NCCI GRAND FINALE ========== -->
 
 
  
