@@ -2204,450 +2204,246 @@ renderPointsTable();
       </div>
     </div>
   </article>
-
-<!-- ========== NCCI GRAND FINALE 2026 ========== -->
+</section>
+   <!-- ═══════════════════════════════════════════
+     NCCI GRAND FINALE 2026 - INDEPENDENT SECTION
+═══════════════════════════════════════════ -->
 
 <style>
-#ncci-final {
-    --gold: #e4bd68;
-    --gold2: #ffe4a1;
-    --bg: #0b0b0b;
-    --card: #171717;
-    --line: #39301f;
-    --muted: #aaa;
-    color: #f5f1e8;
-    font-family: Arial, sans-serif;
-    width: 100%;
-    margin: 22px 0;
+#ncci-grand-final {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 25px 0;
+    color: #f8edce;
 }
 
-#ncci-final * {
+#ncci-grand-final * {
     box-sizing: border-box;
 }
 
-#ncci-final .final-btn {
+#ncci-grand-final .gf-button {
     width: 100%;
-    padding: 19px;
-    border: 1px solid var(--gold);
-    border-radius: 12px;
-    background: linear-gradient(120deg,#17120a,#493719,#17120a);
-    color: var(--gold2);
-    font-size: 19px;
+    padding: 19px 15px;
+    border: 1px solid #d6ad55;
+    border-radius: 13px;
+    background: linear-gradient(120deg,#17130b,#3a2b0c,#17130b);
+    color: #f5d887;
+    font-size: 17px;
     font-weight: 900;
-    letter-spacing: 1.5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 5px 20px #0008;
-}
-
-#ncci-final .final-btn:hover {
-    box-shadow: 0 0 20px #d8ad5544;
-}
-
-#ncci-final .arrow {
-    transition: .3s;
-    font-size: 23px;
-}
-
-#ncci-final .final-btn.active .arrow {
-    transform: rotate(180deg);
-}
-
-#ncci-final .final-content {
-    display: none;
-    margin-top: 14px;
-    background: var(--bg);
-    border: 1px solid #574522;
-    border-radius: 14px;
-    overflow: hidden;
-}
-
-#ncci-final .final-content.show {
-    display: block;
-    animation: finalOpen .3s ease;
-}
-
-@keyframes finalOpen {
-    from {opacity:0;transform:translateY(-8px);}
-    to {opacity:1;transform:translateY(0);}
-}
-
-#ncci-final .hero {
-    text-align: center;
-    padding: 30px 15px;
-    background: radial-gradient(ellipse at top,#59421d,#17130b 70%);
-    border-bottom: 1px solid var(--line);
-}
-
-#ncci-final .trophy {
-    font-size: 43px;
-}
-
-#ncci-final .hero h2 {
-    color: var(--gold2);
-    font-size: 29px;
-    letter-spacing: 3px;
-    margin: 10px 0;
-}
-
-#ncci-final .hero p {
-    color: #c6b58e;
-    font-size: 11px;
-    letter-spacing: 3px;
-}
-
-#ncci-final .champion {
-    display: inline-block;
-    margin-top: 12px;
-    background: linear-gradient(90deg,#a87925,#ffe3a0,#a87925);
-    color: #17110a;
-    padding: 9px 19px;
-    border-radius: 30px;
-    font-size: 12px;
-    font-weight: 900;
-}
-
-#ncci-final .result {
-    text-align: center;
-    padding: 23px 12px;
-    background: #151515;
-    border-bottom: 1px solid var(--line);
-}
-
-#ncci-final .result-label {
-    color: var(--gold);
-    font-size: 11px;
     letter-spacing: 2px;
-    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 18px #0008;
 }
 
-#ncci-final .result h3 {
-    font-size: 23px;
-    margin: 12px 0 6px;
+#ncci-grand-final .gf-button:hover {
+    background: linear-gradient(120deg,#4c3810,#80601b,#4c3810);
 }
 
-#ncci-final .result p {
-    color: var(--muted);
-    font-size: 13px;
+#ncci-grand-final .gf-panel {
+    display: none;
+    margin-top: 15px;
+    overflow: hidden;
+    border: 1px solid #b99443;
+    border-radius: 16px;
+    background: linear-gradient(145deg,#11110f,#201b10,#11110f);
+    box-shadow: 0 8px 30px #0009;
 }
 
-#ncci-final .info-grid {
-    display: grid;
-    grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: 9px;
-    padding: 14px;
+#ncci-grand-final .gf-panel.active {
+    display: block;
+    animation: gfOpen .35s ease;
 }
 
-#ncci-final .info-box {
-    padding: 13px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 9px;
+@keyframes gfOpen {
+    from {opacity:0;transform:translateY(-8px)}
+    to {opacity:1;transform:translateY(0)}
 }
 
-#ncci-final .info-label {
-    color: var(--gold);
-    font-size: 10px;
-    font-weight: bold;
+#ncci-grand-final .gf-header {
+    text-align: center;
+    padding: 26px 12px;
+    background: linear-gradient(130deg,#17130a,#584016,#17130a);
+    border-bottom: 2px solid #d8b35c;
+}
+
+#ncci-grand-final .gf-header .trophy {
+    font-size: 36px;
+}
+
+#ncci-grand-final .gf-header h2 {
+    color: #f5d787;
+    font-size: 25px;
+    margin: 8px 0;
+    letter-spacing: 2px;
+}
+
+#ncci-grand-final .gf-header p {
+    color: #d8c18c;
+    font-size: 12px;
+    margin: 5px;
     letter-spacing: 1px;
 }
 
-#ncci-final .info-value {
-    margin-top: 7px;
+#ncci-grand-final .gf-champions {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 9px 20px;
+    border: 1px solid #e6c36d;
+    border-radius: 30px;
+    color: #ffe6a1;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+#ncci-grand-final .gf-result {
+    text-align: center;
+    padding: 19px 10px;
+    border-bottom: 1px solid #655126;
+}
+
+#ncci-grand-final .gf-result h3 {
+    color: #e9c46e;
+    margin: 0 0 10px;
+    font-size: 19px;
+}
+
+#ncci-grand-final .gf-result .winner {
+    font-size: 23px;
+    font-weight: 900;
+    color: #ffe5a0;
+}
+
+#ncci-grand-final .gf-result p {
+    color: #c8b98f;
     font-size: 13px;
-    font-weight: bold;
-    line-height: 1.5;
+    margin-bottom: 0;
 }
 
-#ncci-final .section {
-    padding: 15px;
+#ncci-grand-final .gf-section {
+    padding: 16px 12px;
 }
 
-#ncci-final .section-title {
+#ncci-grand-final .gf-section h3 {
+    color: #eac76f;
     font-size: 17px;
-    color: var(--gold2);
-    font-weight: 900;
-    padding-bottom: 11px;
-    border-bottom: 1px solid #51401f;
-    margin-bottom: 13px;
+    border-bottom: 1px solid #76602d;
+    padding-bottom: 10px;
+    margin: 5px 0 13px;
 }
 
-#ncci-final .innings-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
-    margin-bottom: 13px;
-    background: linear-gradient(120deg,#332713,#171717);
-    border: 1px solid #685027;
-    border-radius: 10px;
-}
-
-#ncci-final .team {
-    font-size: 21px;
-    font-weight: 900;
-}
-
-#ncci-final .score {
-    text-align: right;
-    color: var(--gold2);
-    font-size: 25px;
-    font-weight: 900;
-}
-
-#ncci-final .overs {
-    color: #bbb;
-    font-size: 11px;
-    margin-top: 4px;
-}
-
-#ncci-final .table-heading {
-    color: var(--gold);
-    font-size: 13px;
-    font-weight: bold;
-    margin: 17px 0 9px;
-}
-
-#ncci-final .table-scroll {
-    width: 100%;
+#ncci-grand-final .gf-table-wrap {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border: 1px solid #302a1e;
-    border-radius: 8px;
+    width: 100%;
 }
 
-#ncci-final table {
+#ncci-grand-final table {
     width: 100%;
-    min-width: 490px;
+    min-width: 470px;
     border-collapse: collapse;
     font-size: 12px;
 }
 
-#ncci-final th {
-    background: #292113;
-    color: var(--gold2);
-    padding: 12px 9px;
-    white-space: nowrap;
-    text-align: center;
-}
-
-#ncci-final td {
-    padding: 12px 9px;
-    border-bottom: 1px solid #302d27;
-    text-align: center;
-    white-space: nowrap;
-}
-
-#ncci-final td:first-child,
-#ncci-final th:first-child {
+#ncci-grand-final th {
+    background: #453516;
+    color: #ffdf91;
+    padding: 11px 8px;
     text-align: left;
 }
 
-#ncci-final .player {
-    font-weight: bold;
+#ncci-grand-final td {
+    padding: 11px 8px;
+    border-bottom: 1px solid #393022;
+    color: #eee5d0;
 }
 
-#ncci-final .total-row td {
-    background: #292113;
-    color: var(--gold2);
+#ncci-grand-final tr:last-child td {
+    border-bottom: none;
+}
+
+#ncci-grand-final .gf-total {
+    background: #302612;
+    color: #ffe29b;
     font-weight: 900;
 }
 
-#ncci-final .extras {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-    color: #c5bba8;
+#ncci-grand-final .gf-extra {
+    color: #d5bd82;
     font-size: 12px;
-    padding: 12px 2px;
-}
-
-#ncci-final .note {
-    padding: 13px;
     margin-top: 12px;
-    border-left: 3px solid var(--gold);
-    background: #1b1914;
-    border-radius: 4px;
-    font-size: 12px;
-    line-height: 1.8;
-    color: #d2c8b5;
 }
 
-#ncci-final .award {
-    margin: 15px;
-    padding: 22px 12px;
+#ncci-grand-final .gf-potm {
     text-align: center;
-    border: 1px solid var(--gold);
+    margin: 12px;
+    padding: 19px 10px;
+    border: 1px solid #a78339;
     border-radius: 12px;
-    background: linear-gradient(130deg,#38280f,#17130d);
+    background: linear-gradient(120deg,#33270f,#17140c);
 }
 
-#ncci-final .award-icon {
-    font-size: 34px;
+#ncci-grand-final .gf-potm h3 {
+    color: #eac76f;
+    margin: 0 0 9px;
 }
 
-#ncci-final .award-label {
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-top: 8px;
+#ncci-grand-final .gf-potm strong {
+    font-size: 23px;
+    color: #ffe5a0;
 }
 
-#ncci-final .award-name {
-    color: var(--gold2);
-    font-size: 29px;
-    font-weight: 900;
-    margin: 9px 0;
-}
-
-#ncci-final .award-stats {
-    color: #d4c9b6;
-    font-size: 12px;
-    line-height: 1.8;
-}
-
-#ncci-final .footer {
-    padding: 20px 10px;
+#ncci-grand-final .gf-footer {
     text-align: center;
-    color: #a99b7c;
+    padding: 17px 8px;
+    border-top: 1px solid #71592c;
+    color: #c9b47d;
     font-size: 11px;
-    letter-spacing: 1.5px;
-    border-top: 1px solid var(--line);
-    line-height: 2;
-}
-
-#ncci-final .swipe-hint {
-    color: #998c71;
-    font-size: 10px;
-    margin: 6px 0;
-}
-
-@media(max-width:480px) {
-    #ncci-final .hero h2 {
-        font-size: 23px;
-    }
-
-    #ncci-final .result h3 {
-        font-size: 19px;
-    }
-
-    #ncci-final .section {
-        padding: 11px;
-    }
-
-    #ncci-final .info-grid {
-        padding: 10px;
-    }
+    letter-spacing: 1px;
 }
 </style>
 
+<div id="ncci-grand-final">
 
-<div id="ncci-final">
+    <button class="gf-button"
+        onclick="(function(){
+        var p=document.getElementById('ncci-gf-scorecard');
+        p.classList.toggle('active');
+        document.getElementById('ncci-gf-btn-text').innerText =
+        p.classList.contains('active')
+        ? '✕ CLOSE GRAND FINALE'
+        : '🏆 GRAND FINALE 2026';
+        })()">
 
-    <button class="final-btn"
-        type="button"
-        aria-expanded="false"
-        onclick="ncciFinalToggle(this)">
-        <span>🏆 GRAND FINALE 2026</span>
-        <span class="arrow">⌄</span>
+        <span id="ncci-gf-btn-text">🏆 GRAND FINALE 2026</span>
+
     </button>
 
-    <div class="final-content">
+    <div class="gf-panel" id="ncci-gf-scorecard">
 
-        <!-- HEADER -->
-
-        <div class="hero">
+        <div class="gf-header">
             <div class="trophy">🏆</div>
             <h2>GRAND FINALE</h2>
-            <p>NCCI CHAMPIONSHIP • 2026</p>
-            <div class="champion">🏆 NPP CHAMPIONS</div>
+            <p>NAHRIKHERA COMMUNITY CRICKET INITIATIVE</p>
+            <p>15 NOVEMBER 2026 • NBG</p>
+            <div class="gf-champions">👑 NPP CHAMPIONS</div>
         </div>
 
-        <!-- RESULT -->
-
-        <div class="result">
-            <div class="result-label">FINAL MATCH RESULT</div>
-            <h3>NPP WON BY 76 RUNS</h3>
-            <p>NPP 118/1 • NSC 42 ALL OUT</p>
-        </div>
-
-        <!-- MATCH DETAILS -->
-
-        <div class="info-grid">
-
-            <div class="info-box">
-                <div class="info-label">DATE</div>
-                <div class="info-value">15 November 2026</div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-label">TOSS</div>
-                <div class="info-value">NPP won and elected to bat</div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-label">VENUE</div>
-                <div class="info-value">NBG</div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-label">PLAYER OF THE MATCH</div>
-                <div class="info-value">Yash</div>
-            </div>
-
-        </div>
-
-        <!-- PLAYING XI -->
-
-        <div class="section">
-
-            <div class="section-title">👥 PLAYING XI</div>
-
-            <div class="info-box" style="margin-bottom:9px">
-                <div class="info-label">NPP</div>
-                <div class="info-value">
-                    Yash • Kishan (C) • Keshav • Yogesh
-                </div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-label">NSC</div>
-                <div class="info-value">
-                    Shaurya (C) • Piyush • Ashutosh • Lokesh
-                </div>
-            </div>
-
+        <div class="gf-result">
+            <h3>FINAL MATCH RESULT</h3>
+            <div class="winner">NPP DEFEATED NSC</div>
+            <p>BY 76 RUNS</p>
+            <p>NPP 118/1 (15 OVERS)</p>
+            <p>NSC 42 ALL OUT (11.4 OVERS)</p>
         </div>
 
         <!-- FIRST INNINGS -->
 
-        <div class="section">
+        <div class="gf-section">
+            <h3>🥇 1ST INNINGS • NPP BATTING</h3>
 
-            <div class="section-title">
-                1ST INNINGS • NPP BATTING
-            </div>
-
-            <div class="innings-heading">
-                <div class="team">NPP</div>
-                <div>
-                    <div class="score">118/1</div>
-                    <div class="overs">15 OVERS • RR 7.87</div>
-                </div>
-            </div>
-
-            <div class="table-heading">🏏 BATTING SCORECARD</div>
-            <div class="swipe-hint">← Swipe table to see all statistics →</div>
-
-            <div class="table-scroll">
+            <div class="gf-table-wrap">
                 <table>
                     <thead>
                         <tr>
-                            <th>Batter</th>
+                            <th>BATTER</th>
                             <th>R</th>
                             <th>B</th>
                             <th>4s</th>
@@ -2657,7 +2453,7 @@ renderPointsTable();
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="player">Yash*</td>
+                            <td>Yash*</td>
                             <td>50</td>
                             <td>47</td>
                             <td>9</td>
@@ -2665,7 +2461,7 @@ renderPointsTable();
                             <td>106.38</td>
                         </tr>
                         <tr>
-                            <td class="player">Kishan*</td>
+                            <td>Kishan*</td>
                             <td>50</td>
                             <td>29</td>
                             <td>6</td>
@@ -2673,7 +2469,7 @@ renderPointsTable();
                             <td>172.41</td>
                         </tr>
                         <tr>
-                            <td class="player">Yogesh</td>
+                            <td>Yogesh</td>
                             <td>0</td>
                             <td>8</td>
                             <td>0</td>
@@ -2681,33 +2477,42 @@ renderPointsTable();
                             <td>0.00</td>
                         </tr>
                         <tr>
-                            <td class="player">Keshav*</td>
+                            <td>Keshav*</td>
                             <td>2</td>
                             <td>6</td>
                             <td>0</td>
                             <td>0</td>
                             <td>33.33</td>
                         </tr>
+                        <tr class="gf-total">
+                            <td>EXTRAS</td>
+                            <td colspan="5">16</td>
+                        </tr>
+                        <tr class="gf-total">
+                            <td>TOTAL</td>
+                            <td colspan="5">118/1 • 15 OVERS</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="extras">
-                <span><b>Total:</b> 118/1</span>
-                <span><b>Extras:</b> 16</span>
-                <span><b>Overs:</b> 15</span>
-                <span><b>Run Rate:</b> 7.87</span>
+            <div class="gf-extra">
+                NPP TOTAL: 118 RUNS • 1 WICKET • 15 OVERS
             </div>
+        </div>
 
-            <div class="table-heading">🎯 NSC BOWLING</div>
-            <div class="swipe-hint">← Swipe table to see all statistics →</div>
+        <!-- NPP BOWLING -->
 
-            <div class="table-scroll">
+        <div class="gf-section">
+            <h3>🎯 NSC BOWLING</h3>
+
+            <div class="gf-table-wrap">
                 <table>
                     <thead>
                         <tr>
-                            <th>Bowler</th>
+                            <th>BOWLER</th>
                             <th>O</th>
+                            <th>M</th>
                             <th>R</th>
                             <th>W</th>
                             <th>ECON</th>
@@ -2715,22 +2520,25 @@ renderPointsTable();
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="player">Shaurya</td>
+                            <td>Shaurya</td>
                             <td>1</td>
+                            <td>0</td>
                             <td>12</td>
                             <td>0</td>
                             <td>12.00</td>
                         </tr>
                         <tr>
-                            <td class="player">Piyush</td>
+                            <td>Piyush</td>
                             <td>7</td>
+                            <td>0</td>
                             <td>52</td>
                             <td>1</td>
                             <td>7.43</td>
                         </tr>
                         <tr>
-                            <td class="player">Ashutosh</td>
+                            <td>Ashutosh</td>
                             <td>7</td>
+                            <td>0</td>
                             <td>54</td>
                             <td>0</td>
                             <td>7.71</td>
@@ -2738,39 +2546,18 @@ renderPointsTable();
                     </tbody>
                 </table>
             </div>
-
-            <div class="note">
-                <b>Wicket:</b> Yogesh b Piyush.
-                <br>
-                Yash and Kishan both scored unbeaten half-centuries.
-            </div>
-
         </div>
 
         <!-- SECOND INNINGS -->
 
-        <div class="section">
+        <div class="gf-section">
+            <h3>🥈 2ND INNINGS • NSC BATTING</h3>
 
-            <div class="section-title">
-                2ND INNINGS • NSC BATTING
-            </div>
-
-            <div class="innings-heading">
-                <div class="team">NSC</div>
-                <div>
-                    <div class="score">42 ALL OUT</div>
-                    <div class="overs">11.4 OVERS • RR 3.60</div>
-                </div>
-            </div>
-
-            <div class="table-heading">🏏 BATTING SCORECARD</div>
-            <div class="swipe-hint">← Swipe table to see all statistics →</div>
-
-            <div class="table-scroll">
+            <div class="gf-table-wrap">
                 <table>
                     <thead>
                         <tr>
-                            <th>Batter</th>
+                            <th>BATTER</th>
                             <th>R</th>
                             <th>B</th>
                             <th>4s</th>
@@ -2780,7 +2567,7 @@ renderPointsTable();
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="player">Shaurya (C)</td>
+                            <td>Shaurya</td>
                             <td>16</td>
                             <td>30</td>
                             <td>3</td>
@@ -2788,7 +2575,7 @@ renderPointsTable();
                             <td>53.33</td>
                         </tr>
                         <tr>
-                            <td class="player">Piyush</td>
+                            <td>Piyush</td>
                             <td>15</td>
                             <td>30</td>
                             <td>3</td>
@@ -2796,7 +2583,7 @@ renderPointsTable();
                             <td>50.00</td>
                         </tr>
                         <tr>
-                            <td class="player">Ashutosh</td>
+                            <td>Ashutosh</td>
                             <td>0</td>
                             <td>5</td>
                             <td>0</td>
@@ -2804,33 +2591,42 @@ renderPointsTable();
                             <td>0.00</td>
                         </tr>
                         <tr>
-                            <td class="player">Lokesh</td>
+                            <td>Lokesh</td>
                             <td>4</td>
                             <td>5</td>
                             <td>0</td>
                             <td>0</td>
                             <td>80.00</td>
                         </tr>
+                        <tr class="gf-total">
+                            <td>EXTRAS</td>
+                            <td colspan="5">7</td>
+                        </tr>
+                        <tr class="gf-total">
+                            <td>TOTAL</td>
+                            <td colspan="5">42 ALL OUT • 11.4 OVERS</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="extras">
-                <span><b>Total:</b> 42 All Out</span>
-                <span><b>Extras:</b> 7</span>
-                <span><b>Overs:</b> 11.4</span>
-                <span><b>Run Rate:</b> 3.60</span>
+            <div class="gf-extra">
+                NSC TOTAL: 42 RUNS • ALL OUT • 11.4 OVERS
             </div>
+        </div>
 
-            <div class="table-heading">🎯 NPP BOWLING</div>
-            <div class="swipe-hint">← Swipe table to see all statistics →</div>
+        <!-- NPP BOWLING -->
 
-            <div class="table-scroll">
+        <div class="gf-section">
+            <h3>🎯 NPP BOWLING</h3>
+
+            <div class="gf-table-wrap">
                 <table>
                     <thead>
                         <tr>
-                            <th>Bowler</th>
+                            <th>BOWLER</th>
                             <th>O</th>
+                            <th>M</th>
                             <th>R</th>
                             <th>W</th>
                             <th>ECON</th>
@@ -2838,22 +2634,25 @@ renderPointsTable();
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="player">Yash</td>
+                            <td>Yash</td>
                             <td>5</td>
+                            <td>0</td>
                             <td>16</td>
                             <td>2</td>
                             <td>3.20</td>
                         </tr>
                         <tr>
-                            <td class="player">Kishan</td>
+                            <td>Kishan</td>
                             <td>6</td>
+                            <td>0</td>
                             <td>22</td>
                             <td>0</td>
                             <td>3.67</td>
                         </tr>
                         <tr>
-                            <td class="player">Yogesh</td>
+                            <td>Yogesh</td>
                             <td>0.4</td>
+                            <td>0</td>
                             <td>4</td>
                             <td>1</td>
                             <td>6.00</td>
@@ -2861,82 +2660,43 @@ renderPointsTable();
                     </tbody>
                 </table>
             </div>
-
-            <div class="note">
-                <b>DISMISSALS</b>
-                <br>
-                1. Shaurya — c Kishan b Yash
-                <br>
-                2. Piyush — b Kishan
-                <br>
-                3. Ashutosh — run out (Yash)
-                <br>
-                4. Lokesh — b Yogesh
-                <br><br>
-                Three wickets credited to bowlers; one dismissal was a run-out.
-            </div>
-
         </div>
 
-        <!-- PLAYER OF THE MATCH -->
+        <!-- DISMISSALS -->
 
-        <div class="award">
-            <div class="award-icon">🏅</div>
-            <div class="award-label">PLAYER OF THE MATCH</div>
-            <div class="award-name">YASH</div>
-            <div class="award-stats">
-                50* Runs • 47 Balls
-                <br>
-                9 Fours • 2 Sixes
-                <br>
-                2 Wickets • 16 Runs
-                <br>
-                Also contributed to Ashutosh's run-out.
-            </div>
+        <div class="gf-section">
+            <h3>⚡ NSC WICKET DETAILS</h3>
+
+            <table style="min-width:0">
+                <tbody>
+                    <tr><td>1.</td><td>Shaurya</td><td>c Kishan b Yash</td></tr>
+                    <tr><td>2.</td><td>Piyush</td><td>b Kishan</td></tr>
+                    <tr><td>3.</td><td>Ashutosh</td><td>Run out (Yash)</td></tr>
+                    <tr><td>4.</td><td>Lokesh</td><td>b Yogesh</td></tr>
+                </tbody>
+            </table>
         </div>
 
-        <!-- RECORD -->
+        <!-- PLAYER OF MATCH -->
 
-        <div class="section">
-
-            <div class="section-title">📜 NCCI HISTORY</div>
-
-            <div class="note">
-                NPP's 118/1 is the 4th-highest total in NCCI history,
-                according to the tournament record supplied.
-            </div>
-
-            <div class="note">
-                <b>🏆 NCCI CHAMPIONS 2026 — NPP</b>
-                <br>
-                A 76-run victory in the Grand Finale!
-            </div>
-
+        <div class="gf-potm">
+            <h3>🏅 PLAYER OF THE MATCH</h3>
+            <strong>YASH</strong>
+            <p style="color:#d7c28e;font-size:12px">
+                50* RUNS • 2 WICKETS
+            </p>
         </div>
 
-        <div class="footer">
-            NCCI • GRAND FINALE 2026
-            <br>
-            THE CHAMPIONSHIP BELONGS TO NPP 🏆
+        <div class="gf-footer">
+            NCCI • GRAND FINALE 2026<br>
+            THE END OF A CHAMPIONSHIP JOURNEY
         </div>
 
     </div>
 </div>
 
-<script>
-function ncciFinalToggle(button) {
-    const content = button.nextElementSibling;
-    const open = content.classList.toggle("show");
-
-    button.classList.toggle("active", open);
-    button.setAttribute("aria-expanded", open);
-}
-</script>
-</section>
-<!-- ========== END NCCI GRAND FINALE ========== -->
-
-
- 
+<!-- ═════════ END GRAND FINALE ═════════ -->
+   
 
 <!-- ================================
      SECTION G: SQUADS — ADD LATER
