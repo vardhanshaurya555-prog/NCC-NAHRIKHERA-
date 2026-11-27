@@ -1959,255 +1959,376 @@ section,.section{max-width:100%;overflow-x:clip}
   </div>
 </div>
 
+
 <style>
-.test-scorecard {
-  background: #10151d;
-  color: #fff;
-  padding: 20px;
-  border-radius: 16px;
-  border: 2px solid #bda46a;
-  font-family: Arial, sans-serif;
-  max-width: 1100px;
-  margin: auto;
+.ncci-test-card{
+  background:#17181d;
+  border:1px solid #393a42;
+  border-radius:22px;
+  padding:22px;
+  color:#f4f4f5;
+  font-family:inherit;
+  margin:20px 0;
 }
-.test-scorecard * { box-sizing: border-box; }
-.ts-header {
-  text-align: center;
-  padding: 15px;
-  border-bottom: 2px solid #bda46a;
+.ncci-test-card *{box-sizing:border-box}
+.ncci-test-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  font-size:13px;
+  letter-spacing:1px;
+  color:#bfc2cc;
 }
-.ts-header h1 { margin: 5px; }
-.ts-header p { color: #d3c28d; }
-.ts-meta {
-  text-align: center;
-  background: #222b38;
-  padding: 12px;
-  border-radius: 10px;
-  margin: 12px 0;
+.ncci-test-status{
+  color:#e76a72;
+  font-weight:700;
 }
-.ts-stumps {
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
-  color: #ffd36a;
-  margin: 20px 0;
+.ncci-test-meta{
+  color:#9ba3b5;
+  font-size:14px;
+  margin:14px 0 22px;
 }
-.ts-innings {
-  border: 1px solid #555;
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 18px 0;
+.ncci-test-match{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
 }
-.ts-inn-head {
-  padding: 12px;
-  background: #8c2020;
-  font-weight: bold;
-  font-size: 19px;
+.ncci-test-team{
+  flex:1;
 }
-.ts-blue { background: #174b85; }
-.ts-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
+.ncci-test-team:last-child{text-align:right}
+.ncci-test-team h3{
+  font-size:21px;
+  margin:0;
 }
-.ts-table th, .ts-table td {
-  border: 1px solid #37404c;
-  padding: 8px 5px;
-  text-align: center;
+.ncci-test-team p{
+  margin:4px 0;
+  color:#9ba3b5;
 }
-.ts-table th { background: #222b38; }
-.ts-table td:first-child,
-.ts-table th:first-child { text-align: left; }
-.ts-small {
-  display: block;
-  font-size: 11px;
-  color: #c5c5c5;
-  margin-top: 3px;
+.ncci-test-score{
+  font-size:30px;
+  font-weight:800;
+  margin-top:8px;
 }
-.ts-extra, .ts-fow {
-  padding: 10px;
-  border-top: 1px solid #444;
-  font-size: 13px;
+.ncci-test-vs{
+  color:#9ba3b5;
+  font-size:14px;
 }
-.ts-placeholder {
-  text-align: center;
-  padding: 14px;
-  color: #c9c9c9;
+.ncci-test-summary{
+  margin-top:22px;
+  color:#e76a72;
+  font-weight:700;
+  font-size:14px;
 }
-.ts-placeholder td { color: #aaa; }
-.ts-footer {
-  text-align: center;
-  padding: 15px;
-  color: #e6c66b;
+.ncci-test-details{
+  margin-top:22px;
+  border-top:1px solid #393a42;
+  padding-top:20px;
 }
-@media(max-width:600px) {
-  .test-scorecard { padding: 8px; }
-  .ts-table { font-size: 11px; }
-  .ts-table th, .ts-table td { padding: 6px 3px; }
-  .ts-inn-head { font-size: 15px; }
+.ncci-test-details summary{
+  list-style:none;
+  display:inline-block;
+  cursor:pointer;
+  background:#292a31;
+  border:1px solid #666773;
+  border-radius:12px;
+  padding:15px 22px;
+  color:#f5f5f5;
+  font-weight:700;
+  font-size:14px;
+  margin-bottom:20px;
+}
+.ncci-test-details summary::-webkit-details-marker{display:none}
+.ncci-test-details summary::after{content:" +"}
+.ncci-test-details[open] summary::after{content:" −"}
+.ncci-innings{
+  border:1px solid #393a42;
+  border-radius:15px;
+  overflow:hidden;
+  margin:22px 0;
+}
+.ncci-innings-head{
+  background:#282932;
+  padding:14px;
+  font-size:17px;
+  font-weight:800;
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+}
+.ncci-innings-head.red{
+  border-left:4px solid #e34b55;
+}
+.ncci-innings-head.blue{
+  border-left:4px solid #528be9;
+}
+.ncci-score-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+.ncci-score-table th,
+.ncci-score-table td{
+  border-bottom:1px solid #333640;
+  padding:10px 6px;
+  text-align:center;
+}
+.ncci-score-table th{
+  color:#aeb4c2;
+  font-weight:600;
+}
+.ncci-score-table td:first-child,
+.ncci-score-table th:first-child{
+  text-align:left;
+}
+.ncci-batter-note{
+  display:block;
+  font-size:11px;
+  color:#aeb4c2;
+  margin-top:3px;
+}
+.ncci-fow{
+  padding:13px;
+  font-size:13px;
+  line-height:1.7;
+  color:#c1c5d0;
+}
+.ncci-extras{
+  padding:10px 13px;
+  font-size:13px;
+  color:#c1c5d0;
+  border-top:1px solid #333640;
+}
+.ncci-innings-sub{
+  padding:12px;
+  font-weight:700;
+  color:#e76a72;
+  border-top:1px solid #333640;
+}
+.ncci-day-end{
+  text-align:center;
+  color:#e76a72;
+  font-weight:800;
+  padding:18px 8px;
+  letter-spacing:1px;
+}
+@media(max-width:500px){
+  .ncci-test-card{padding:16px}
+  .ncci-test-score{font-size:24px}
+  .ncci-test-team h3{font-size:18px}
+  .ncci-score-table{font-size:11px}
+  .ncci-score-table th,
+  .ncci-score-table td{padding:8px 3px}
+  .ncci-innings-head{font-size:14px}
 }
 </style>
 
-<div class="test-scorecard">
+<div class="ncci-test-card">
 
-  <div class="ts-header">
-    <h1>MONSTERS 🆚 GANGSTERS</h1>
-    <p>TEST SERIES • MATCH 1 OF 3</p>
-    <p>27 NOVEMBER • NBG</p>
+  <div class="ncci-test-top">
+    <span>NCCI TEST MATCH SCORECARD</span>
+    <span class="ncci-test-status">DAY 1 • STUMPS</span>
   </div>
 
-  <div class="ts-meta">
-    <b>Toss:</b> Gangsters won the toss and elected to bat first.
-    <br><br>
-    <b>Session:</b> 1
+  <div class="ncci-test-meta">
+    27 NOVEMBER 2026 · DAY 1 · VENUE: NBG
+    <br>
+    <span style="color:#e76a72;font-weight:700">
+      MATCH 1 OF 3
+    </span>
   </div>
 
-  <div class="ts-stumps">DAY 1 • STUMPS</div>
+  <div class="ncci-test-match">
 
-  <!-- FIRST INNINGS -->
-
-  <div class="ts-innings">
-    <div class="ts-inn-head">
-      1ST INNINGS • GANGSTERS — 61/3 (11.0)
+    <div class="ncci-test-team">
+      <h3>GANGSTERS</h3>
+      <p>1st Innings</p>
+      <div class="ncci-test-score">61/3</div>
+      <p>11.0 Overs</p>
     </div>
 
-    <table class="ts-table">
-      <tr>
-        <th>Batter</th><th>R</th><th>B</th>
-        <th>4s</th><th>6s</th><th>SR</th>
-      </tr>
-      <tr>
-        <td>Shaurya<span class="ts-small">b Kishan</span></td>
-        <td>28</td><td>26</td><td>6</td><td>0</td><td>107.69</td>
-      </tr>
-      <tr>
-        <td>Piyush<span class="ts-small">b Kishan</span></td>
-        <td>0</td><td>5</td><td>0</td><td>0</td><td>0.00</td>
-      </tr>
-      <tr>
-        <td>Ashutosh<span class="ts-small">c &amp; b Kishan</span></td>
-        <td>24</td><td>35</td><td>5</td><td>0</td><td>68.57</td>
-      </tr>
-    </table>
+    <div class="ncci-test-vs">VS</div>
 
-    <div class="ts-fow">
-      <b>Fall of wickets:</b>
-      0/1 (Piyush, 0.5 ov),
-      48/2 (Shaurya, 7.4 ov),
-      61/3 (Ashutosh, 11.0 ov)
+    <div class="ncci-test-team">
+      <h3>MONSTERS</h3>
+      <p>2nd Innings</p>
+      <div class="ncci-test-score">42/3</div>
+      <p>6.0 Overs</p>
     </div>
 
-    <div class="ts-extra"><b>Extras:</b> 9 (9 W)</div>
-
-    <table class="ts-table">
-      <tr><th colspan="5">Bowling • Monsters</th></tr>
-      <tr><th>Bowler</th><th>O</th><th>R</th><th>W</th><th>Eco</th></tr>
-      <tr><td>Kishan</td><td>7</td><td>49</td><td>3</td><td>7.00</td></tr>
-      <tr><td>Yash</td><td>4</td><td>12</td><td>0</td><td>3.00</td></tr>
-    </table>
   </div>
 
-  <!-- SECOND INNINGS -->
+  <div class="ncci-test-summary">
+    DAY 1 ENDS • MATCH RESUMES DAY 2
+  </div>
 
-  <div class="ts-innings">
-    <div class="ts-inn-head ts-blue">
-      2ND INNINGS • MONSTERS — 42/3 (6.0)
+  <details class="ncci-test-details">
+    <summary>SCORECARD</summary>
+
+    <div class="ncci-day-end">
+      DAY 1 • STUMPS
     </div>
 
-    <table class="ts-table">
-      <tr>
-        <th>Batter</th><th>R</th><th>B</th>
-        <th>4s</th><th>6s</th><th>SR</th>
-      </tr>
-      <tr>
-        <td>Yash<span class="ts-small">c &amp; b Shaurya</span></td>
-        <td>1</td><td>2</td><td>0</td><td>0</td><td>50.00</td>
-      </tr>
-      <tr>
-        <td>Yogesh<span class="ts-small">c Ashutosh b Shaurya</span></td>
-        <td>4</td><td>7</td><td>1</td><td>0</td><td>57.14</td>
-      </tr>
-      <tr>
-        <td>Kishan<span class="ts-small">b Piyush</span></td>
-        <td>33</td><td>21</td><td>2</td><td>3</td><td>157.14</td>
-      </tr>
-    </table>
-
-    <div class="ts-fow">
-      <b>Fall of wickets:</b>
-      5/1 (Yogesh, 1.1 ov),
-      6/2 (Yash, 1.3 ov),
-      42/3 (Kishan, 6.0 ov)
+    <div class="ncci-test-meta">
+      <b>TOSS:</b> Gangsters won the toss and elected to bat first.
+      <br>
+      <b>Session:</b> 1
     </div>
 
-    <div class="ts-extra"><b>Extras:</b> 4 (4 W)</div>
+    <!-- 1ST INNINGS -->
 
-    <table class="ts-table">
-      <tr><th colspan="5">Bowling • Gangsters</th></tr>
-      <tr><th>Bowler</th><th>O</th><th>R</th><th>W</th><th>Eco</th></tr>
-      <tr><td>Shaurya</td><td>2</td><td>10</td><td>2</td><td>5.00</td></tr>
-      <tr><td>Piyush</td><td>2</td><td>22</td><td>1</td><td>11.00</td></tr>
-      <tr><td>Ashutosh</td><td>2</td><td>10</td><td>0</td><td>5.00</td></tr>
-    </table>
-  </div>
+    <div class="ncci-innings">
+      <div class="ncci-innings-head red">
+        <span>1ST INNINGS • GANGSTERS</span>
+        <span>61/3 (11.0)</span>
+      </div>
 
-  <!-- THIRD INNINGS -->
+      <table class="ncci-score-table">
+        <tr>
+          <th>Batter</th><th>R</th><th>B</th>
+          <th>4s</th><th>6s</th><th>SR</th>
+        </tr>
+        <tr>
+          <td>Shaurya<span class="ncci-batter-note">b Kishan</span></td>
+          <td>28</td><td>26</td><td>6</td><td>0</td><td>107.69</td>
+        </tr>
+        <tr>
+          <td>Piyush<span class="ncci-batter-note">b Kishan</span></td>
+          <td>0</td><td>5</td><td>0</td><td>0</td><td>0.00</td>
+        </tr>
+        <tr>
+          <td>Ashutosh<span class="ncci-batter-note">c &amp; b Kishan</span></td>
+          <td>24</td><td>35</td><td>5</td><td>0</td><td>68.57</td>
+        </tr>
+      </table>
 
-  <div class="ts-innings">
-    <div class="ts-inn-head">
-      3RD INNINGS • GANGSTERS — -
+      <div class="ncci-fow">
+        <b>Fall of wickets:</b><br>
+        0/1 (Piyush, 0.5 ov)<br>
+        48/2 (Shaurya, 7.4 ov)<br>
+        61/3 (Ashutosh, 11.0 ov)
+      </div>
+
+      <div class="ncci-extras">
+        <b>Extras:</b> 9 (9 W)
+      </div>
+
+      <div class="ncci-innings-sub">BOWLING • MONSTERS</div>
+
+      <table class="ncci-score-table">
+        <tr><th>Bowler</th><th>O</th><th>R</th><th>W</th><th>Eco</th></tr>
+        <tr><td>Kishan</td><td>7</td><td>49</td><td>3</td><td>7.00</td></tr>
+        <tr><td>Yash</td><td>4</td><td>12</td><td>0</td><td>3.00</td></tr>
+      </table>
     </div>
 
-    <table class="ts-table">
-      <tr>
-        <th>Batter</th><th>R</th><th>B</th>
-        <th>4s</th><th>6s</th><th>SR</th>
-      </tr>
-      <tr><td>Shaurya</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><td>Piyush</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><td>Ashutosh</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    </table>
+    <!-- 2ND INNINGS -->
 
-    <table class="ts-table">
-      <tr><th colspan="5">Bowling • Monsters</th></tr>
-      <tr><th>Bowler</th><th>O</th><th>R</th><th>W</th><th>Eco</th></tr>
-      <tr><td>Kishan</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><td>Yash</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    </table>
-  </div>
+    <div class="ncci-innings">
+      <div class="ncci-innings-head blue">
+        <span>2ND INNINGS • MONSTERS</span>
+        <span>42/3 (6.0)</span>
+      </div>
 
-  <!-- FOURTH INNINGS -->
+      <table class="ncci-score-table">
+        <tr>
+          <th>Batter</th><th>R</th><th>B</th>
+          <th>4s</th><th>6s</th><th>SR</th>
+        </tr>
+        <tr>
+          <td>Yash<span class="ncci-batter-note">c &amp; b Shaurya</span></td>
+          <td>1</td><td>2</td><td>0</td><td>0</td><td>50.00</td>
+        </tr>
+        <tr>
+          <td>Yogesh<span class="ncci-batter-note">c Ashutosh b Shaurya</span></td>
+          <td>4</td><td>7</td><td>1</td><td>0</td><td>57.14</td>
+        </tr>
+        <tr>
+          <td>Kishan<span class="ncci-batter-note">b Piyush</span></td>
+          <td>33</td><td>21</td><td>2</td><td>3</td><td>157.14</td>
+        </tr>
+      </table>
 
-  <div class="ts-innings">
-    <div class="ts-inn-head ts-blue">
-      4TH INNINGS • MONSTERS — -
+      <div class="ncci-fow">
+        <b>Fall of wickets:</b><br>
+        5/1 (Yogesh, 1.1 ov)<br>
+        6/2 (Yash, 1.3 ov)<br>
+        42/3 (Kishan, 6.0 ov)
+      </div>
+
+      <div class="ncci-extras">
+        <b>Extras:</b> 4 (4 W)
+      </div>
+
+      <div class="ncci-innings-sub">BOWLING • GANGSTERS</div>
+
+      <table class="ncci-score-table">
+        <tr><th>Bowler</th><th>O</th><th>R</th><th>W</th><th>Eco</th></tr>
+        <tr><td>Shaurya</td><td>2</td><td>10</td><td>2</td><td>5.00</td></tr>
+        <tr><td>Piyush</td><td>2</td><td>22</td><td>1</td><td>11.00</td></tr>
+        <tr><td>Ashutosh</td><td>2</td><td>10</td><td>0</td><td>5.00</td></tr>
+      </table>
     </div>
 
-    <table class="ts-table">
-      <tr>
-        <th>Batter</th><th>R</th><th>B</th>
-        <th>4s</th><th>6s</th><th>SR</th>
-      </tr>
-      <tr><td>Yash</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><td>Kishan</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><td>Yogesh</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    </table>
+    <!-- 3RD INNINGS -->
 
-    <table class="ts-table">
-      <tr><th colspan="5">Bowling • Gangsters</th></tr>
-      <tr><th>Bowler</th><th>O</th><th>R</th><th>W</th><th>Eco</th></tr>
-      <tr><td>Shaurya</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><td>Piyush</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-      <tr><td>Ashutosh</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-    </table>
-  </div>
+    <div class="ncci-innings">
+      <div class="ncci-innings-head red">
+        <span>3RD INNINGS • GANGSTERS</span>
+        <span>-</span>
+      </div>
 
-  <div class="ts-footer">
-    <h3>DAY 1 COMPLETE • MATCH RESUMES DAY 2</h3>
-    <p>MONSTERS vs GANGSTERS • 3-MATCH TEST SERIES</p>
-  </div>
+      <table class="ncci-score-table">
+        <tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr>
+        <tr><td>Shaurya</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>Piyush</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>Ashutosh</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      </table>
+
+      <div class="ncci-innings-sub">BOWLING • MONSTERS</div>
+
+      <table class="ncci-score-table">
+        <tr><th>Bowler</th><th>O</th><th>R</th><th>W</th><th>Eco</th></tr>
+        <tr><td>Kishan</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>Yash</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      </table>
+    </div>
+
+    <!-- 4TH INNINGS -->
+
+    <div class="ncci-innings">
+      <div class="ncci-innings-head blue">
+        <span>4TH INNINGS • MONSTERS</span>
+        <span>-</span>
+      </div>
+
+      <table class="ncci-score-table">
+        <tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr>
+        <tr><td>Yash</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>Kishan</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>Yogesh</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      </table>
+
+      <div class="ncci-innings-sub">BOWLING • GANGSTERS</div>
+
+      <table class="ncci-score-table">
+        <tr><th>Bowler</th><th>O</th><th>R</th><th>W</th><th>Eco</th></tr>
+        <tr><td>Shaurya</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>Piyush</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+        <tr><td>Ashutosh</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+      </table>
+    </div>
+
+    <div class="ncci-day-end">
+      DAY 1 COMPLETE • RESUME DAY 2
+    </div>
+
+  </details>
 
 </div>
+
 
 
 
