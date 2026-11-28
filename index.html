@@ -1435,191 +1435,295 @@ section,.section{max-width:100%;overflow-x:clip}
       </div>
     </div>
 
-  <div class="npl-score-details">
-  <div class="npl-score-inner" style="padding:12px">
+  
+<style>
+.test-scorecard {
+  background:#111111;
+  color:#f5f5f5;
+  font-family:Arial,sans-serif;
+  border:1px solid #343434;
+  border-radius:14px;
+  overflow:hidden;
+  margin:18px 0;
+}
+.test-scorecard * { box-sizing:border-box; }
+.test-header {
+  padding:20px 15px;
+  background:linear-gradient(135deg,#1b1b1b,#292929);
+  border-bottom:3px solid #c62828;
+  text-align:center;
+}
+.test-header .series {
+  color:#aaa;
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+.test-header h2 {
+  margin:10px 0;
+  font-size:23px;
+  color:#fff;
+}
+.test-header .match-meta {
+  font-size:12px;
+  color:#bbb;
+}
+.test-result {
+  margin:14px;
+  padding:13px;
+  border-radius:8px;
+  background:#242424;
+  border-left:4px solid #d32f2f;
+}
+.test-result strong {
+  color:#ff5252;
+  font-size:15px;
+}
+.test-result p {
+  font-size:13px;
+  color:#ccc;
+  margin:6px 0 0;
+}
+.test-innings {
+  padding:14px;
+  border-bottom:1px solid #333;
+}
+.test-innings h3 {
+  font-size:16px;
+  margin:0 0 5px;
+  color:#fff;
+}
+.test-innings .total {
+  font-size:13px;
+  color:#ff5252;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+.test-scroll {
+  overflow-x:auto;
+  width:100%;
+  -webkit-overflow-scrolling:touch;
+}
+.test-table {
+  width:100%;
+  min-width:470px;
+  border-collapse:collapse;
+  font-size:12px;
+}
+.test-table th {
+  text-align:right;
+  padding:10px 7px;
+  color:#aaa;
+  border-bottom:1px solid #444;
+  font-weight:bold;
+}
+.test-table th:first-child,
+.test-table td:first-child {
+  text-align:left;
+}
+.test-table td {
+  padding:10px 7px;
+  border-bottom:1px solid #292929;
+  text-align:right;
+}
+.test-table td:first-child {
+  color:#f1f1f1;
+  font-weight:bold;
+}
+.test-table .dismissal {
+  display:block;
+  font-size:10px;
+  color:#999;
+  font-weight:normal;
+  margin-top:3px;
+}
+.test-table .extras-row td,
+.test-table .total-row td {
+  font-weight:bold;
+  color:#fff;
+}
+.test-table .total-row td {
+  border-top:1px solid #555;
+  border-bottom:2px solid #555;
+}
+.test-detail {
+  font-size:12px;
+  color:#bbb;
+  line-height:1.8;
+  padding-top:12px;
+}
+.test-detail strong {
+  color:#eee;
+}
+.test-section-label {
+  background:#1d1d1d;
+  color:#ff5252;
+  font-size:11px;
+  letter-spacing:1.5px;
+  padding:12px 14px;
+  font-weight:bold;
+  border-bottom:1px solid #333;
+}
+.test-award {
+  text-align:center;
+  padding:18px;
+  background:#202020;
+  border-top:2px solid #c62828;
+}
+.test-award small {
+  display:block;
+  color:#aaa;
+  letter-spacing:1px;
+  margin-bottom:6px;
+}
+.test-award strong {
+  font-size:18px;
+  color:#fff;
+}
+.test-award p {
+  font-size:12px;
+  color:#bbb;
+}
+</style>
 
-    <div class="npl-score-info" style="font-size:12px;line-height:1.9;margin-bottom:18px">
-      <strong>MATCH INFORMATION</strong>
-      <div>Date: 26–27 November 2026</div>
-      <div>Match: NCCI Test Match 1 of 3</div>
-      <div>Venue: NBG</div>
-      <div>Toss: Gangsters won the toss and elected to bat first</div>
-      <div>Result: Monsters won by 1 wicket</div>
-      <div>Remaining: 1 day</div>
-      <div>Player of the Match: <strong style="color:#f5cd72">Kishan</strong></div>
+<div class="test-scorecard">
+
+  <div class="test-header">
+    <div class="series">NCCI • TEST SERIES</div>
+    <h2>Monsters vs Gangsters</h2>
+    <div class="match-meta">
+      NBG Test Match 1 of 3 • 26–27 November 2026
     </div>
-
-    <!-- 1ST INNINGS -->
-    <div class="npl-innings-panel">
-      <div class="npl-innings-heading">
-        <strong>GANGSTERS — 1ST INNINGS</strong>
-        <strong>61/3 <small>(11.0 overs)</small></strong>
-      </div>
-
-      <div class="npl-table-scroll">
-        <table>
-          <thead>
-            <tr><th>BATTER</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Shaurya (b Kishan)</td><td>28</td><td>26</td><td>6</td><td>0</td><td>107.69</td></tr>
-            <tr><td>Piyush (b Kishan)</td><td>0</td><td>5</td><td>0</td><td>0</td><td>0.00</td></tr>
-            <tr><td>Ashutosh (c &amp; b Kishan)</td><td>24</td><td>35</td><td>5</td><td>0</td><td>68.57</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div style="font-size:12px;line-height:1.8;margin:10px 0">
-        <strong>Extras:</strong> 9 (9 W)<br>
-        <strong>Fall of Wickets:</strong>
-        0/1 (Piyush, 0.5 ov), 48/2 (Shaurya, 7.4 ov), 61/3 (Ashutosh, 11.0 ov)
-      </div>
-
-      <div class="npl-table-scroll">
-        <table>
-          <thead><tr><th>BOWLER</th><th>O</th><th>M</th><th>R</th><th>W</th><th>ECON</th></tr></thead>
-          <tbody>
-            <tr><td>Kishan</td><td>7.0</td><td>0</td><td>49</td><td>3</td><td>7.00</td></tr>
-            <tr><td>Yash</td><td>4.0</td><td>0</td><td>12</td><td>0</td><td>3.00</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- 2ND INNINGS -->
-    <div class="npl-innings-panel">
-      <div class="npl-innings-heading">
-        <strong>MONSTERS — 2ND INNINGS</strong>
-        <strong>42/3 <small>(6.0 overs)</small></strong>
-      </div>
-
-      <div class="npl-table-scroll">
-        <table>
-          <thead><tr><th>BATTER</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr></thead>
-          <tbody>
-            <tr><td>Yash (c &amp; b Shaurya)</td><td>1</td><td>2</td><td>0</td><td>0</td><td>50.00</td></tr>
-            <tr><td>Yogesh (c Ashutosh b Shaurya)</td><td>4</td><td>7</td><td>1</td><td>0</td><td>57.14</td></tr>
-            <tr><td>Kishan (b Piyush)</td><td>33</td><td>21</td><td>2</td><td>3</td><td>157.14</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div style="font-size:12px;line-height:1.8;margin:10px 0">
-        <strong>Extras:</strong> 4 (4 W)<br>
-        <strong>Fall of Wickets:</strong>
-        5/1 (Yogesh, 1.1 ov), 6/2 (Yash, 1.3 ov), 42/3 (Kishan, 6.0 ov)
-      </div>
-
-      <div class="npl-table-scroll">
-        <table>
-          <thead><tr><th>BOWLER</th><th>O</th><th>M</th><th>R</th><th>W</th><th>ECON</th></tr></thead>
-          <tbody>
-            <tr><td>Shaurya</td><td>2.0</td><td>0</td><td>10</td><td>2</td><td>5.00</td></tr>
-            <tr><td>Piyush</td><td>2.0</td><td>0</td><td>22</td><td>1</td><td>11.00</td></tr>
-            <tr><td>Ashutosh</td><td>2.0</td><td>0</td><td>10</td><td>0</td><td>5.00</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- 3RD INNINGS -->
-    <div class="npl-innings-panel">
-      <div class="npl-innings-heading">
-        <strong>GANGSTERS — 3RD INNINGS</strong>
-        <strong>57 <small>(10.5 overs)</small></strong>
-      </div>
-
-      <div class="npl-table-scroll">
-        <table>
-          <thead><tr><th>BATTER</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr></thead>
-          <tbody>
-            <tr><td>Shaurya (b Kishan)</td><td>12</td><td>14</td><td>2</td><td>0</td><td>85.71</td></tr>
-            <tr><td>Piyush (b Kishan)</td><td>11</td><td>19</td><td>1</td><td>0</td><td>57.89</td></tr>
-            <tr><td>Ashutosh (b Yogesh)</td><td>20</td><td>32</td><td>2</td><td>0</td><td>62.50</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div style="font-size:12px;line-height:1.8;margin:10px 0">
-        <strong>Extras:</strong> 14 W<br>
-        <strong>Fall of Wickets:</strong>
-        16/1 (Shaurya, 2.2 ov), 31/2 (Piyush, 5.3 ov), 57/3 (Ashutosh, 10.5 ov)
-      </div>
-
-      <div class="npl-table-scroll">
-        <table>
-          <thead><tr><th>BOWLER</th><th>O</th><th>M</th><th>R</th><th>W</th><th>ECON</th></tr></thead>
-          <tbody>
-            <tr><td>Kishan</td><td>5.0</td><td>0</td><td>28</td><td>2</td><td>5.60</td></tr>
-            <tr><td>Yogesh</td><td>2.5</td><td>0</td><td>17</td><td>1</td><td>6.00</td></tr>
-            <tr><td>Yash</td><td>3.0</td><td>0</td><td>12</td><td>0</td><td>4.00</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- 4TH INNINGS -->
-    <div class="npl-innings-panel">
-      <div class="npl-innings-heading">
-        <strong>MONSTERS — 4TH INNINGS</strong>
-        <strong>76/2 <small>(8.3 overs)</small></strong>
-      </div>
-
-      <div style="font-size:12px;margin:8px 0">
-        <strong>Target: 77</strong>
-      </div>
-
-      <div class="npl-table-scroll">
-        <table>
-          <thead><tr><th>BATTER</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr></thead>
-          <tbody>
-            <tr><td>Yogesh (b Shaurya)</td><td>0</td><td>8</td><td>0</td><td>0</td><td>0.00</td></tr>
-            <tr><td>Yash (b Piyush)</td><td>26</td><td>36</td><td>3</td><td>1</td><td>72.22</td></tr>
-            <tr><td>Kishan*</td><td>50</td><td>43</td><td>3</td><td>3</td><td>116.28</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div style="font-size:12px;line-height:1.8;margin:10px 0">
-        <strong>Extras:</strong> 1 NB<br>
-        <strong>Fall of Wickets:</strong>
-        0/1 (Yogesh, 1.2 ov), 27/2 (Yash, 7.2 ov)
-      </div>
-
-      <div class="npl-table-scroll">
-        <table>
-          <thead><tr><th>BOWLER</th><th>O</th><th>M</th><th>R</th><th>W</th><th>ECON</th></tr></thead>
-          <tbody>
-            <tr><td>Ashutosh</td><td>6.0</td><td>0</td><td>30</td><td>1</td><td>5.00</td></tr>
-            <tr><td>Piyush</td><td>6.0</td><td>0</td><td>36</td><td>0</td><td>6.00</td></tr>
-            <tr><td>Shaurya</td><td>2.3</td><td>0</td><td>9</td><td>1</td><td>3.60</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- RESULT -->
-    <div style="margin-top:16px;padding:12px;border:1px solid rgba(245,205,114,.35);border-radius:10px;background:rgba(245,205,114,.07);text-align:center">
-      <div style="font-size:15px;font-weight:900;color:#f5cd72;letter-spacing:.5px">
-        MONSTERS WON BY 1 WICKET
-      </div>
-      <div style="font-size:12px;color:#9cabc4;margin-top:6px">
-        1 DAY REMAINING
-      </div>
-    </div>
-
-    <!-- PLAYER OF MATCH -->
-    <div style="margin-top:14px;padding:12px;border:1px solid rgba(245,205,114,.25);border-radius:10px">
-      <div style="font-size:11px;color:#f5cd72;font-weight:900;letter-spacing:1px">
-        PLAYER OF THE MATCH
-      </div>
-      <div style="font-size:18px;font-weight:900;margin-top:5px">Kishan</div>
-      <div style="font-size:12px;color:#9cabc4">
-        33 runs · 3 wickets · 50* · 2 wickets
-      </div>
-    </div>
-
   </div>
+
+  <div class="test-result">
+    <strong>MONSTERS WON BY 1 WICKET</strong>
+    <p>Match completed on Day 2 • 1 day remaining</p>
+  </div>
+
+  <div class="test-section-label">DAY 1 • 26 NOVEMBER 2026</div>
+
+  <div class="test-innings">
+    <h3>Gangsters — 1st Innings</h3>
+    <div class="total">61/3 • 11.0 Overs</div>
+    <div class="test-scroll">
+      <table class="test-table">
+        <thead>
+          <tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Shaurya<span class="dismissal">b Kishan</span></td><td>28</td><td>26</td><td>6</td><td>0</td><td>107.69</td></tr>
+          <tr><td>Piyush<span class="dismissal">b Kishan</span></td><td>0</td><td>5</td><td>0</td><td>0</td><td>0.00</td></tr>
+          <tr><td>Ashutosh<span class="dismissal">c &amp; b Kishan</span></td><td>24</td><td>35</td><td>5</td><td>0</td><td>68.57</td></tr>
+          <tr class="extras-row"><td>Extras</td><td colspan="5">9 (W 9)</td></tr>
+          <tr class="total-row"><td>Total</td><td colspan="5">61/3 (11.0 Overs)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="test-detail">
+      <strong>Fall of Wickets:</strong> 0/1 (Piyush, 0.5 ov), 48/2 (Shaurya, 7.4 ov), 61/3 (Ashutosh, 11.0 ov)
+    </div>
+    <div class="test-detail">
+      <strong>Bowling — Monsters:</strong><br>
+      Kishan — 7.0 ov, 0 maidens, 49 runs, 3 wickets (7.00)<br>
+      Yash — 4.0 ov, 0 maidens, 12 runs, 0 wickets (3.00)
+    </div>
+  </div>
+
+  <div class="test-innings">
+    <h3>Monsters — 2nd Innings</h3>
+    <div class="total">42/3 • 6.0 Overs</div>
+    <div class="test-scroll">
+      <table class="test-table">
+        <thead>
+          <tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Yash<span class="dismissal">c &amp; b Shaurya</span></td><td>1</td><td>2</td><td>0</td><td>0</td><td>50.00</td></tr>
+          <tr><td>Yogesh<span class="dismissal">c Ashutosh b Shaurya</span></td><td>4</td><td>7</td><td>1</td><td>0</td><td>57.14</td></tr>
+          <tr><td>Kishan<span class="dismissal">b Piyush</span></td><td>33</td><td>21</td><td>2</td><td>3</td><td>157.14</td></tr>
+          <tr class="extras-row"><td>Extras</td><td colspan="5">4 (W 4)</td></tr>
+          <tr class="total-row"><td>Total</td><td colspan="5">42/3 (6.0 Overs)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="test-detail">
+      <strong>Fall of Wickets:</strong> 5/1 (Yogesh, 1.1 ov), 6/2 (Yash, 1.3 ov), 42/3 (Kishan, 6.0 ov)
+    </div>
+    <div class="test-detail">
+      <strong>Bowling — Gangsters:</strong><br>
+      Shaurya — 2.0 ov, 10 runs, 2 wickets (5.00)<br>
+      Piyush — 2.0 ov, 22 runs, 1 wicket (11.00)<br>
+      Ashutosh — 2.0 ov, 10 runs, 0 wickets (5.00)
+    </div>
+  </div>
+
+  <div class="test-section-label">DAY 2 • 27 NOVEMBER 2026</div>
+
+  <div class="test-innings">
+    <h3>Gangsters — 3rd Innings</h3>
+    <div class="total">57 • 10.5 Overs</div>
+    <div class="test-scroll">
+      <table class="test-table">
+        <thead>
+          <tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Shaurya<span class="dismissal">b Kishan</span></td><td>12</td><td>14</td><td>2</td><td>0</td><td>85.71</td></tr>
+          <tr><td>Ashutosh<span class="dismissal">b Yogesh</span></td><td>20</td><td>32</td><td>2</td><td>0</td><td>62.50</td></tr>
+          <tr><td>Piyush<span class="dismissal">b Kishan</span></td><td>11</td><td>19</td><td>1</td><td>0</td><td>57.89</td></tr>
+          <tr class="extras-row"><td>Extras</td><td colspan="5">14 (W 14)</td></tr>
+          <tr class="total-row"><td>Total</td><td colspan="5">57 (10.5 Overs)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="test-detail">
+      <strong>Fall of Wickets:</strong> 16/1 (Shaurya, 2.2 ov), 31/2 (Piyush, 5.3 ov), 57/3 (Ashutosh, 10.5 ov)
+    </div>
+    <div class="test-detail">
+      <strong>Bowling — Monsters:</strong><br>
+      Kishan — 5.0 ov, 28 runs, 2 wickets (5.60)<br>
+      Yogesh — 2.5 ov, 17 runs, 1 wicket (6.00)<br>
+      Yash — 3.0 ov, 12 runs, 0 wickets (4.00)
+    </div>
+  </div>
+
+  <div class="test-innings">
+    <h3>Monsters — 4th Innings</h3>
+    <div class="total">77 Target • Won by 1 Wicket</div>
+    <div class="test-scroll">
+      <table class="test-table">
+        <thead>
+          <tr><th>Batter</th><th>R</th><th>B</th><th>4s</th><th>6s</th><th>SR</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Yash<span class="dismissal">b Piyush</span></td><td>26</td><td>36</td><td>3</td><td>1</td><td>72.22</td></tr>
+          <tr><td>Kishan<span class="dismissal">not out</span></td><td>50*</td><td>43</td><td>3</td><td>3</td><td>116.28</td></tr>
+          <tr><td>Yogesh<span class="dismissal">b Shaurya</span></td><td>0</td><td>8</td><td>0</td><td>0</td><td>0.00</td></tr>
+          <tr class="extras-row"><td>Extras</td><td colspan="5">1 (NB 1)</td></tr>
+          <tr class="total-row"><td>Total</td><td colspan="5">77 Target</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="test-detail">
+      <strong>Fall of Wickets:</strong> 0/1 (Yogesh, 1.2 ov), 27/2 (Yash, 7.2 ov)
+    </div>
+    <div class="test-detail">
+      <strong>Bowling — Gangsters:</strong><br>
+      Ashutosh — 6.0 ov, 30 runs, 1 wicket (5.00)<br>
+      Piyush — 6.0 ov, 36 runs, 0 wickets (6.00)<br>
+      Shaurya — 2.3 ov, 9 runs, 1 wicket (3.60)
+    </div>
+  </div>
+
+  <div class="test-award">
+    <small>PLAYER OF THE MATCH</small>
+    <strong>Kishan</strong>
+    <p>Match-winning contribution for Monsters</p>
+  </div>
+
+</div>
+
 
 
 <!-- ================================
